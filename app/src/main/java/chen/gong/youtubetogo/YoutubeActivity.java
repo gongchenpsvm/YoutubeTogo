@@ -2,6 +2,7 @@ package chen.gong.youtubetogo;
 
 import android.os.Bundle;
 import android.support.constraint.ConstraintLayout;
+import android.util.Log;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
@@ -12,6 +13,7 @@ import com.google.android.youtube.player.YouTubePlayerView;
 
 
 public class YoutubeActivity extends YouTubeBaseActivity implements YouTubePlayer.OnInitializedListener {
+    private static final String TAG = "YoutubeActivity";
 
     static final String GOOGLE_API_KEY = "AIzaSyBVFNqZ1g0yzHktuBDptRLst9mx2WR8jzA";
     static final String YOUTUBE_VIDEO_ID = "OQ5jsbhAv_M";
@@ -37,8 +39,13 @@ public class YoutubeActivity extends YouTubeBaseActivity implements YouTubePlaye
     }
 
     @Override
-    public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean b) {
+    public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean restored) {
+        Log.d(TAG, "onInitializationSuccess: provider is " + provider.getClass().toString());
+        Toast.makeText(this, "Initialized Youtube Player successfully", Toast.LENGTH_LONG).show();
 
+        if (!restored){
+            youTubePlayer.cueVideo(YOUTUBE_VIDEO_ID);
+        }
     }
 
     @Override
