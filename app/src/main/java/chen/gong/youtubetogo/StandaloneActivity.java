@@ -32,11 +32,13 @@ public class StandaloneActivity  extends AppCompatActivity implements View.OnCli
         switch (v.getId()){
             case R.id.btnPlayVideo:
                 intent = YouTubeStandalonePlayer.createVideoIntent(this
-                        , YoutubeActivity.GOOGLE_API_KEY, YoutubeActivity.YOUTUBE_VIDEO_ID);
+                        , YoutubeActivity.GOOGLE_API_KEY, YoutubeActivity.YOUTUBE_VIDEO_ID, 0, true,
+                        false);
                 break;
             case R.id.btnPlayList:
                 intent = YouTubeStandalonePlayer.createPlaylistIntent(this
-                        , YoutubeActivity.GOOGLE_API_KEY, YoutubeActivity.YOUTBE_PLAYLIST);
+                        , YoutubeActivity.GOOGLE_API_KEY, YoutubeActivity.YOUTBE_PLAYLIST, 0, 0,
+                        true, true);//The 1st  0 is index. The 2nd true switches on the light box
                 break;
             default:
         }
