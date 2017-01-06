@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_main"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="chen.gong.youtubetogo.MainActivity">
+    android:layout_height="match_parent">
 
     <Button
-        android:text="Play a Single Video"
+        android:text="Play Video"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/btnPlaySingle"
+        android:id="@+id/btnPlayVideo"
         android:layout_marginTop="16dp"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginStart="16dp"
@@ -19,13 +18,11 @@
         android:layout_marginLeft="16dp" />
 
     <Button
-        android:text="Standalone Submenu"
+        android:text="Play Play List "
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/btnStandalone"
+        android:id="@+id/btnPlayList"
+        app:layout_constraintLeft_toLeftOf="@+id/btnPlayVideo"
         android:layout_marginTop="16dp"
-        app:layout_constraintTop_toBottomOf="@+id/btnPlaySingle"
-        android:layout_marginStart="16dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginLeft="16dp" />
+        app:layout_constraintTop_toBottomOf="@+id/btnPlayVideo" />
 </android.support.constraint.ConstraintLayout>

@@ -65,7 +65,7 @@ public class YoutubeActivity
             Toast.makeText(this, errorMessage, Toast.LENGTH_LONG).show();
         }
 
-    } // PlaybackEventListener PlayerStateChangeListener
+    }
 
     private YouTubePlayer.PlaybackEventListener playbackEventListener
             = new YouTubePlayer.PlaybackEventListener() {
